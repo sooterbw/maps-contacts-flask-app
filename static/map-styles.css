@@ -1,0 +1,82 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 50%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    background-color: #f2f2f2;
+    width: 100%
+}
+.pac-controls {
+    border: none;
+    background-color: #f2f2f2;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.overflow {
+    height: calc(50% - 100px);
+    overflow-y: scroll;
+}
+
+.newpatron {
+    height: 50px;
+}
+
+.field {
+    border: none;
+    padding-left: 10px;
+    padding-right: 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.flex-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.but-del {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.but-add {
+    height: 50px;
+    width: 100%;
+}
+
+.colform1 {
+    width: 20%;
+    padding-left: 20px;
+}
+
+.colform2 {
+    width: 25%;
+    padding-left: 10px;
+}
+
+.colform3 {
+    width: 20%;
+    padding-left: 20px;
+}
+
+.colform4 {
+    width: calc(35% - 85px);
+    padding-left: 20px;
+}
+
+.colbut {
+    width: 70px;
+}
