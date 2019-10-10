@@ -1,5 +1,7 @@
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, make_response, Response
 from flask_sqlalchemy import SQLAlchemy
+import pandas as pd
+import sqlite3 as sql
 import os
 
 app = Flask(__name__)
@@ -40,6 +42,16 @@ def delete():
     db.session.delete(patron)
     db.session.commit()
     return redirect("/")
+
+@app.route("/export", methods=["GET"])
+def export():
+    con = sql.connect('db.sqlite')
+    df = pd.read_sql_query('select * from Patron', con)
+    resp = make_response(df.to_csv())
+    resp.headers['Content-Disposition'] = "attachment; filename=export.csv"
+    resp.headers["Content-Type"] = "text/csv"
+    return resp
+
 
 if __name__ == '__main__':
     app.run(debug=True)
